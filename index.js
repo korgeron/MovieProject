@@ -13,7 +13,7 @@ submitAPI_KEY.addEventListener('click', ()=>{
 
 
 
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${MOVIE_NAME}`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${MOVIE_NAME}`)
     .then(res => res.json())
     .then(data => {
         console.log(data);
