@@ -1,5 +1,6 @@
 let API_KEY;
 let MOVIE_NAME;
+let URL = 'https://www/omdbapi.com/?apikey=' + API_KEY + '&s=' + MOVIE_NAME;
 
 const submitAPI_KEY = document.querySelector('.submit-key');
 const apiKeyForm = document.querySelector('.todo-list');
@@ -13,7 +14,7 @@ submitAPI_KEY.addEventListener('click', ()=>{
 
 
 
-    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${MOVIE_NAME}`)
+    fetch(URL)
     .then(res => res.json())
     .then(data => {
         console.log(data);
