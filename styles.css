@@ -1,0 +1,50 @@
+:root{
+    --pageBackground: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background: var(--pageBackground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    border: 2px outset darkgrey;
+    border-radius: 1em;
+    background: rgb(128,128,128, .35);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50vh;
+    width: 70vw;
+    padding: 1em;
+}
+.todo-list > label{
+    color: white;
+    font-size: 24px;
+}
+.todo-list > input{
+    height: 5vh;
+    width: 85%;
+    font-size: 26px;
+}
+.todo-list > button{
+    height: 6.5vh;
+    width: 80%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.todo-list > button:hover{
+    cursor: pointer;
+    color: white;
+    background: lightgrey;
+}
