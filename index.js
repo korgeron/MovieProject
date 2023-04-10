@@ -22,7 +22,7 @@ submitAPI_KEY.addEventListener('click', ()=>{
         data.Search.forEach(movie => {
             movieContainer.innerHTML +=
                 `<div class="movie-card" style="background-image: url(${movie.Poster})">
-                    <div>${movie.Title}</div>
+                    <div class="movie-title">${movie.Title}</div>
                 </div>`;
         })
     });

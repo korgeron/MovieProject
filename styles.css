@@ -63,7 +63,7 @@ body{
 
 .movie-container{
     grid-area: container;
-    background: orange;
+    background: black;
     display: flex;
     align-items: center;
     overflow-x: scroll;
@@ -94,14 +94,37 @@ body{
     max-width: 80%;
     margin: 1em;
     padding: .5em;
-    border: 1px inset darkgrey;
+    border: 2px inset darkgrey;
     border-radius: 1em;
     background-size: cover;
     background-repeat: no-repeat;
 }
+.movie-card:hover{
+    cursor: pointer;
+    border: 2px inset orange;
+}
+.movie-title{
+    background: black;
+    border-radius: 1em;
+    border: 1px solid white;
+    padding: 1vh;
+}
+@media screen and (width < 800px){
+    .movie-section{
+       grid-template-areas:
+               'image info'
+               'image info'
+               'container container';
+           grid-template-rows: repeat(2 , 1fr) 3fr;
+    }
+    .movie-container{
+        overflow-x: hidden;
+        overflow-y: scroll;
+        flex-direction: column;
+    }
 
-@media screen and (min-width: 800px){
     .movie-card{
-        width: 80%;
+        min-width: 80%;
+        min-height: 50%;
     }
 }
