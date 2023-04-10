@@ -76,9 +76,7 @@ body{
     overflow-y: scroll;
     flex-direction: column;
 }
-.movie-container::-webkit-scrollbar {
-                  display: none;
-                }
+
 
 .movie-info{
     grid-area: info;
@@ -117,7 +115,14 @@ body{
     border: 1px solid white;
     padding: 1vh;
 }
-@media screen and (width > 800px){
+
+@media screen and (width < 800px){
+.movie-container::-webkit-scrollbar {
+                  display: none;
+                }
+}
+
+@media screen and (width >= 800px){
     .movie-section{
          grid-template-areas:
              'image info'
@@ -135,4 +140,5 @@ body{
         min-height: 90%;
         min-width: 15%;
     }
+
 }
