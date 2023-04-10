@@ -30,7 +30,7 @@ body{
 }
 .todo-list > label{
     color: white;
-    font-size: 24px;
+    font-size: 4vh;
 }
 .todo-list > input{
     height: 5vh;
@@ -38,6 +38,10 @@ body{
     font-size: 26px;
 }
 .todo-list > button{
+    color: black;
+    background: lightgrey;
+    border: 2px outset black;
+    border-radius: 1em;
     height: 6.5vh;
     width: 80%;
     font-size: 20px;
@@ -47,7 +51,7 @@ body{
 .todo-list > button:hover{
     cursor: pointer;
     color: white;
-    background: lightgrey;
+    background: darkgrey;
 }
 
 .movie-section{
