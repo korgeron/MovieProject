@@ -71,7 +71,7 @@ body{
     background: black;
     display: flex;
     align-items: center;
-
+    padding: 2em;
     overflow-x: hidden;
     overflow-y: scroll;
     flex-direction: column;
@@ -84,7 +84,10 @@ body{
 }
 .movie-image{
     grid-area: image;
-    background: blue;
+    background: black;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
 }
 
 .movie-card{
@@ -115,6 +118,8 @@ body{
     border: 1px solid white;
     padding: 1vh;
 }
+
+
 
 @media screen and (width < 800px){
 .movie-container::-webkit-scrollbar {

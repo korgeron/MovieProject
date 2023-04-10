@@ -6,6 +6,16 @@ const submitAPI_KEY = document.querySelector('.submit-key');
 const apiKeyForm = document.querySelector('.todo-list');
 const bodyElement = document.querySelector('body');
 const movieSection = document.querySelector('.movie-section');
+const movieImageBox = document.querySelector('.movie-image');
+
+const populateMovieData = (movieID , key) => {
+    fetch(`https://www.omdbapi.com/?apikey=${key}&i=${movieID}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.Poster);
+            movieImageBox.style.backgroundImage = `url(${data.Poster})`;
+        })
+}
 
 submitAPI_KEY.addEventListener('click', ()=>{
     API_KEY = document.querySelector('.api-key').value;
@@ -24,8 +34,15 @@ submitAPI_KEY.addEventListener('click', ()=>{
             movieContainer.innerHTML +=
                 `<div class="movie-card" style="background-image: url(${movie.Poster})">
                     <div class="movie-title">${movie.Title}</div>
-                    <input type="hidden" value="${movie.imdbID}" />
+                    <input class="movie-id" type="hidden" value="${movie.imdbID}" />
                 </div>`;
         })
-    });
-})
+
+       let movieIDs = document.querySelectorAll('.movie-id');
+        movieIDs.forEach((id , i) => {
+            if (i == 0) populateMovieData(id.value, API_KEY);
+        })
+    })
+});
+
+
