@@ -19,10 +19,12 @@ submitAPI_KEY.addEventListener('click', ()=>{
     .then(res => res.json())
     .then(data => {
         console.log(data);
+
         data.Search.forEach(movie => {
             movieContainer.innerHTML +=
                 `<div class="movie-card" style="background-image: url(${movie.Poster})">
                     <div class="movie-title">${movie.Title}</div>
+                    <input type="hidden" value="${movie.imdbID}" />
                 </div>`;
         })
     });
