@@ -8,6 +8,7 @@
 }
 
 body{
+    color: white;
     height: 100vh;
     background: var(--pageBackground);
     display: flex;
@@ -47,4 +48,42 @@ body{
     cursor: pointer;
     color: white;
     background: lightgrey;
+}
+
+.movie-section{
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    grid-template-areas:
+        'image info'
+        'container container';
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2 , 1fr);
+}
+
+.movie-container{
+    grid-area: container;
+    background: orange;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+.movie-info{
+    grid-area: info;
+    background: red;
+}
+.movie-image{
+    grid-area: image;
+    background: blue;
+}
+
+.movie-card{
+    min-height: 90%;
+    min-width: 15%;
+    max-height: 90%;
+    max-width: 15%;
+    margin: 1em;
+    padding: .5em;
+    border: 1px inset darkgrey;
+    border-radius: 1em;
 }
