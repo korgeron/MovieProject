@@ -64,6 +64,7 @@ body{
                    'image info'
                    'container container';
      grid-template-rows: repeat(2 , 1fr) 3fr;
+     grid-template-columns: repeat(2, 1fr);
 }
 
 .movie-container{
@@ -80,7 +81,13 @@ body{
 
 .movie-info{
     grid-area: info;
-    background: red;
+    background: black;
+    padding: 1em;
+    display: flex;
+    overflow: visible;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .movie-image{
     grid-area: image;
@@ -88,6 +95,19 @@ body{
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+}
+.movie-image > button{
+    padding: 1vh;
+    margin: 1vh;
+    border-radius: 1em;
+    background: none;
+    color: white;
+    border: 2px inset grey;
+    transition: .5s ease;
+}
+.movie-image > button:hover{
+    cursor: pointer;
+    border: 2px inset red;
 }
 
 .movie-card{
