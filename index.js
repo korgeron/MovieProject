@@ -8,11 +8,6 @@ const bodyElement = document.querySelector('body');
 const movieSection = document.querySelector('.movie-section');
 const movieImageBox = document.querySelector('.movie-image');
 const movieInfo = document.querySelector('.movie-info');
-const resetButton = document.querySelector('.reset');
-
-resetButton.addEventListener('click', ()=>{
-    window.location.reload();
-})
 
 const populateMovieData = (movieID , key) => {
     fetch(`https://www.omdbapi.com/?apikey=${key}&i=${movieID}`)
@@ -43,18 +38,24 @@ const populateMovieData = (movieID , key) => {
 }
 
 submitAPI_KEY.addEventListener('click', ()=>{
+
+
     API_KEY = document.querySelector('.api-key').value;
     MOVIE_NAME = document.querySelector('#movie-title').value;
     let URL = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${MOVIE_NAME}`
+
+    if (MOVIE_NAME != ""){
     apiKeyForm.style.display = 'none';
     movieSection.style.display = 'grid';
-
-
     fetch(URL)
     .then(res => res.json())
     .then(data => {
         console.log(data);
-
+        if (data.Error == "Movie not found!"){
+            apiKeyForm.style.display = 'flex';
+            movieSection.style.display = 'none';
+            apiKeyForm.prepend("CAN'T FIND THAT MOVIE TITLE");
+        }
         data.Search.forEach(movie => {
             movieContainer.innerHTML +=
                 `<div class="movie-card" style="background-image: url(${movie.Poster})">
@@ -79,6 +80,10 @@ submitAPI_KEY.addEventListener('click', ()=>{
             })
 
     })
+    } else{
+        apiKeyForm.prepend('SEARCH FOR A VALID MOVIE TITLE');
+    }
+
 });
 
 
