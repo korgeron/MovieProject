@@ -133,13 +133,13 @@ body{
 
 
 
-@media screen and (width < 800px){
+@media screen and (width < 1000px){
 .movie-container::-webkit-scrollbar {
                   display: none;
                 }
 }
 
-@media screen and (width >= 800px){
+@media screen and (width >= 1000px){
     .movie-section{
          grid-template-areas:
              'image info'
